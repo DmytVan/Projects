@@ -1,0 +1,64 @@
+﻿<Window x:Class="AerPorts.View.Edit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AerPorts.View"
+        mc:Ignorable="d"
+        Title="Edit" Height="385" Width="336" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2" Grid.RowSpan="4" DataContext="{Binding flight}">
+            <Label Content="Норме рейса" HorizontalAlignment="Left" Margin="7,20,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126"  Text="{Binding flightNumber, Mode=TwoWay}"/>
+            <Label Content="Страна отправления" HorizontalAlignment="Left" Margin="7,46,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,49,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126" Text="{Binding countryOfDeparture, Mode=TwoWay}"/>
+            <Label Content="Город отправления" HorizontalAlignment="Left" Margin="7,77,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126" Text="{Binding cityOfDeparture, Mode=TwoWay}"/>
+            <Label Content="Страна прибытия" HorizontalAlignment="Left" Margin="7,105,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,105,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126" Text="{Binding countryOfArrival, Mode=TwoWay}"/>
+            <Label Content="Город прибытия" HorizontalAlignment="Left" Margin="7,130,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,133,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.397,0.609" Text="{Binding cityOfArrival, Mode=TwoWay}"/>
+            <Label Content="Дата отправления" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="124,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" Text="{Binding dayD, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="162,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" Text="{Binding monthD, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="198,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="46" Text="{Binding yearD, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="249,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" Text="{Binding hourD, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="285,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" Text="{Binding minD, Mode=TwoWay}"/>
+            <Label Content="дд" HorizontalAlignment="Left" Margin="132,151,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="мм" HorizontalAlignment="Left" Margin="170,151,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="гг" HorizontalAlignment="Left" Margin="211,151,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="чч" HorizontalAlignment="Left" Margin="257,151,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="мин" HorizontalAlignment="Left" Margin="285,151,0,0" VerticalAlignment="Top" Width="28" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="Дата прибытия" HorizontalAlignment="Left" Margin="7,199,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="124,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" Text="{Binding dayA, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="160,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" Text="{Binding monthA, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="198,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="46" Text="{Binding yearA, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="22" Margin="249,203,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" RenderTransformOrigin="2.871,8.739" Text="{Binding hourA, Mode=TwoWay}"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="285,203,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="31" RenderTransformOrigin="0.667,0.986" Text="{Binding minA, Mode=TwoWay}"/>
+            <Label Content="дд" HorizontalAlignment="Left" Margin="132,184,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="мм" HorizontalAlignment="Left" Margin="168,184,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="гг" HorizontalAlignment="Left" Margin="211,184,0,0" VerticalAlignment="Top" Width="23" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="чч" HorizontalAlignment="Left" Margin="257,185,0,0" VerticalAlignment="Top" Width="23" Height="22" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="мин" HorizontalAlignment="Left" Margin="290,185,0,0" VerticalAlignment="Top" Width="28" Height="23" FontSize="9" RenderTransformOrigin="0.848,0.5"/>
+            <Label Content="Цена эконом-класс" HorizontalAlignment="Left" Margin="7,233,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,233,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126" Text="{Binding price, Mode=TwoWay}"/>
+            <Label Content="Цена бизнес-класс" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="153,259,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="126" Text="{Binding priceVIP, Mode=TwoWay}"/>
+
+
+        </Grid>
+        <Button Content="Ok" Grid.Column="1" HorizontalAlignment="Left" Margin="42,29,0,0" Grid.Row="3" VerticalAlignment="Top" Command="{Binding EditCommand}" Width="74" IsDefault="True"/>
+        <Button Content="Cencel" HorizontalAlignment="Left" Margin="79,29,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" IsCancel="True" />
+        <Label Name="TB2" HorizontalAlignment="Left" Height="23" Margin="10,56,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Content="{Binding error}"/>
+    </Grid>
+</Window>

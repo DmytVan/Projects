@@ -1,0 +1,112 @@
+﻿<Window x:Class="AerPorts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AerPorts"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="752.388" MaxWidth="753">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="TB1" Grid.Row="0" Grid.Column="0" Margin="10,10,10,29" Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Name="Search" Grid.Row="0" Grid.Column="1" Margin="119,10,10,29" Command="{Binding Restore}" Width="auto">
+            <Image Source="1.png"></Image>
+        </Button>
+
+        <ListView Name="LV1" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectFlight}" >
+            <ListView.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding EdWind}" CommandParameter="{Binding SelectFlight}"/>
+            </ListView.InputBindings>
+            <ListView.View>
+                <GridView>
+
+                    <GridView.Columns>
+
+                        <GridViewColumn Width="Auto" Header="Ном.Рейса">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding flightNumber}" TextAlignment="Right"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Страна отпр.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding countryOfDeparture}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Город отпр.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding cityOfDeparture}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Страна преб.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding countryOfArrival}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Город преб.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding cityOfArrival}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Дата отпр.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding departureDate}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Дата преб.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding arrivalDate}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Цена экон.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding price}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="Auto" Header="Цена бизн.">
+                            <GridViewColumn.CellTemplate >
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding priceVIP}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <Button Content="Удалить" Margin="534,15,0,15" Command="{Binding DellCommand}" Grid.Row="2"  CommandParameter="{Binding SelectFlight}" Width="60"/>
+        <Label Name="TB2" HorizontalAlignment="Left" Height="23" Margin="78,10,0,0" Grid.Row="3"  Content="{Binding Adress}" VerticalAlignment="Top" />
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="30,15,0,0" Grid.Row="2" VerticalAlignment="Top" Width="74" Command="{Binding OpnW}"  CommandParameter="{Binding SelectFlight}" Grid.Column="1" />
+        <Button Content="Редактировать" Margin="410,15,84,15" Command="{Binding EdWind}" Grid.Row="2" CommandParameter="{Binding SelectFlight}" Width="100"/>
+
+    </Grid>
+</Window>

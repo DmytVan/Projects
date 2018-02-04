@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Film.Controllers.EditController">
+   <content>
+      <VBox prefHeight="572.0" prefWidth="587.0">
+         <children>
+            <Label text="Введите название (rus)*:" />
+            <TextField fx:id="txtNameR">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <Label text="Введите название (eng)*:" />
+            <TextField fx:id="txtNameE" />
+            <Label text="Выберите страну*:" />
+            <ComboBox fx:id="cmbCountry" onAction="#choiceCountry" prefWidth="150.0" />
+            <Label text="Выберите жанр*:" />
+            <HBox prefHeight="41.0" prefWidth="499.0">
+               <children>
+                  <ComboBox fx:id="cmbGenre" onAction="#choiceGenre" prefWidth="150.0" />
+                  <Button fx:id="btnRes" mnemonicParsing="false" onAction="#pressButton" text="Сброс">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="labelGenre" prefHeight="50.0" prefWidth="494.0" wrapText="true" />
+            <Label text="Введите год*:" />
+            <TextField fx:id="txtYear" />
+            <Label text="Введите продюссера:" />
+            <TextField fx:id="txtProducer" />
+            <Label text="Введите рейтинг IMDB*:" />
+            <TextField fx:id="txtIMDB" />
+            <Label text="Введите рейтинг КиноПоиск*:" />
+            <TextField fx:id="txtKP" />
+            <HBox prefHeight="16.0" prefWidth="547.0">
+               <children>
+                  <Label text="Введите путь к фотографии:" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="..." fx:id="btnImgPath" onAction="#pressButton">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TextField fx:id="txtImgPath" editable="false" />
+            <HBox prefHeight="28.0" prefWidth="547.0">
+               <children>
+                  <Label text="Введите путь к трейлеру/фильму:" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="..." fx:id="btnFilmPath" onAction="#pressButton">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TextField fx:id="txtFilmPath" editable="false" />
+            <Label text="Введите описание фильма*:" />
+            <TextField fx:id="txtDescription" />
+            <HBox prefHeight="30.0" prefWidth="547.0">
+               <children>
+                  <Button fx:id="btnOk" mnemonicParsing="false" onAction="#pressButton" prefHeight="25.0" prefWidth="63.0" text="Ок">
+                     <HBox.margin>
+                        <Insets left="150.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#pressButton" text="Отмена">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="labelError">
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>

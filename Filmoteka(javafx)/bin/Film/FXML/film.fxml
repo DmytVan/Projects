@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Film.Controllers.FilmController">
+   <children>
+      <HBox prefHeight="404.0" prefWidth="523.0">
+         <children>
+            <AnchorPane prefHeight="301.0" prefWidth="227.0">
+               <children>
+                  <ImageView fx:id="img" fitHeight="243.0" fitWidth="214.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+               </HBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="321.0" prefWidth="283.0">
+               <children>
+                  <VBox prefHeight="390.0" prefWidth="266.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="labelName" styleClass="lblName" text="Name" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="10.0" top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="labelCountry" text="Country">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="labelYear" text="Year">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="labelProducer" text="Producer">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="labelGenre" text="Genre">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="labelRating" text="Rating">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="labelDescription" text="Description " wrapText="true" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Pane fx:id="videoPane" maxHeight="300.0" prefHeight="215.0" prefWidth="513.0">
+         <children>
+            <MediaView fx:id="media" fitHeight="300.0" fitWidth="300.0" layoutX="112.0" />
+            <Button fx:id="btnPlay" layoutX="412.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="25.0" prefWidth="50.0" styleClass="btnPlay" text="▷">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnStop" layoutX="412.0" layoutY="58.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="25.0" prefWidth="50.0" text="■" />
+            <Button fx:id="btnPause" layoutX="412.0" layoutY="29.0" mnemonicParsing="false" onAction="#pressButton" text="| |">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</VBox>
